@@ -1,9 +1,52 @@
 import type { Component } from "solid-js";
+import { createSignal } from "solid-js";
+import { format } from "date-fns";
 
 const Home: Component = () => {
+  const [todayDate, setDate] = createSignal(new Date());
+  const [dateFormat, setDateFormat] = createSignal("MMMM yyyy");
   return (
     <div class="bg-white md:py-8 px-4 lg:max-w-7xl lg:mx-auto lg:px-8">
-      <p class="text-4xl font-bold text-gray-800 mb-8">September 2021</p>
+      <div class="flex flex-row mb-8">
+        <div class="mt-auto mb-auto mr-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </div>
+        <div>
+          <p class="text-4xl font-bold text-gray-800 mt-auto mb-auto">
+            {format(todayDate(), dateFormat())}
+          </p>
+        </div>
+        <div class="mt-auto mb-auto ml-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </div>
+      </div>
+
       <div class="inline-flex flex-col space-y-1 items-start justify-start h-full w-full">
         <div class="inline-flex space-x-28 items-start justify-start pr-24 h-full w-full">
           <p class="w-12 h-full text-sm font-medium text-gray-800 uppercase">

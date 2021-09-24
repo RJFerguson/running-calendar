@@ -19,6 +19,7 @@
   "dependencies": {
     "date-fns": "^2.24.0",
     "solid-app-router": "^0.1.5",
+    "solid-headless": "^0.6.4",
     "solid-js": "^1.1.1"
   }
 }

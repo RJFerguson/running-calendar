@@ -45,7 +45,7 @@ const Home: Component = () => {
       for (let i = 0; i < 7; i++) {
         formattedDate = format(day, dateFormat);
         days.push(
-          <div class="flex items-start justify-start w-40 h-full pl-2 pr-32 pt-2.5 pb-24 border border-gray-200">
+          <div class="flex items-start justify-start w-40 h-full pl-2 pr-32 pt-2.5 pb-16 border border-gray-200">
             <div class="flex flex-col">
               <p
                 class={`text-sm font-medium
@@ -55,9 +55,14 @@ const Home: Component = () => {
               >
                 {formattedDate}
               </p>
-              <div class="flex flex-row">
-                <p>Plan:&nbsp;</p>
-                <input class="w-24" type="text" />
+
+              <div class="flex flex-row pt-4">
+                <p class="pr-4">Plan&nbsp;</p>
+                <input class="w-16" type="text" />
+              </div>
+              <div class="flex flex-row pt-4">
+                <p>Actual&nbsp;</p>
+                <input class="w-16" type="text" />
               </div>
             </div>
           </div>
@@ -67,6 +72,14 @@ const Home: Component = () => {
       rows.push(
         <div class="inline-flex items-center justify-start h-full w-full">
           {days}
+          <div class="flex flex-col items-start justify-start w-40 h-full pt-10 pb-16 border border-gray-200">
+            <p class="">
+              Total planned<span class="font-bold ml-1"> 200</span>
+            </p>
+            <p class="pt-6">
+              Actual total<span class="font-bold ml-4"> 200</span>
+            </p>
+          </div>
         </div>
       );
       days = [];
